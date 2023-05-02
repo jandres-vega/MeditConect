@@ -3,11 +3,23 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const doctorSchema = new Schema({
-    name: {
+    first_name: {
         type: String,
         require: true
     },
-    age: {
+    last_name: {
+        type: String,
+        require: true
+    },
+    email: {
+        type: String,
+        require: true
+    },
+    consultorio: {
+        type: Number,
+        require: true
+    },
+    specialty: {
         type: String,
         require: true
     }

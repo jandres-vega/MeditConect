@@ -8,7 +8,7 @@ router.post('/', async(req, res) => {
         const response = await userDoc.save();
         res.status(200).send(response)
     }catch (e) {
-        console.error()
+        console.error(e)
     }
 })
 
