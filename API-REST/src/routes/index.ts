@@ -1,7 +1,8 @@
-const doctorRouter = require('./doctor.routes');
+import {Express} from "express";
+import doctorRouter from './doctor.routes';
 
-function routes(app) {
+function routes(app:Express):void {
     app.use('/doctor', doctorRouter);
 }
 
-module.exports = {routes}
+export default routes;

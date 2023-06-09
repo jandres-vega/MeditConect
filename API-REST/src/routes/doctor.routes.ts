@@ -1,8 +1,8 @@
 import {Router} from "express";
 import {addDoctor} from "../controller/POST/doctor.controller";
 
-const router = Router();
+const router:Router = Router();
 
 router.post('/', addDoctor)
 
-module.exports = router;
+export default router;

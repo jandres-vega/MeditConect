@@ -1,16 +1,8 @@
-const {app} = require('./src/App');
-const conexion = require('./src/libs/conexion');
+import app from './src/App';
+import connect from "./src/libs/conexion";
+import {config} from "./src/config";
 
-async function conex() {
-   try {
-       await conexion()
-   }catch (e) {
-       console.error(e)
-   }
-}
-
-conex()
-
-app.listen(3005, () => {
-    console.log(`listen on port ${3005}`)
+connect()
+app.listen(config.port_server, () => {
+    console.log(`listen on port ${config.port_server}`)
 })

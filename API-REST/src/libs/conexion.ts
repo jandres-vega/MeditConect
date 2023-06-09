@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
+import {config} from "../config";
 
+const URL:string = `mongodb+srv://${config.user_db}:${config.password}@demo.libza8m.mongodb.net/${config.name_db}`;
+const connect = async ():Promise<void> => {
+    await mongoose.connect(URL)
+}
 
-module.exports = () =>
-    mongoose.connect('mongodb+srv://root:Andres20@pruebas.7h3izyl.mongodb.net/?retryWrites=true&w=majority');
+export default connect;

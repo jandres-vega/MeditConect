@@ -1,16 +1,20 @@
-const express = require('express');
-const morgan = require('morgan');
-const cors = require('cors');
-const {routes} = require('./routes/index');
+import express, {Express} from 'express';
+import morgan from 'morgan';
+import cors from 'cors';
+import {logErrors, handleError, handleErrorBoom} from "./middlewares/errors.handler";
 
-const app = express();
+import routes from './routes/index';
+
+const app:Express = express();
 
 app.use(morgan('dev'));
 app.use(express.json())
 app.use(cors())
 
 routes(app);
-
-module.exports = {app}
+app.use(logErrors);
+app.use(handleErrorBoom);
+app.use(handleError)
+export default app;
 
 

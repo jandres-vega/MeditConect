@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+import {model, Schema, Model} from 'mongoose';
+import {Doctor, DocumentDoctor} from "../types/type.doctor";
 
-const {Schema} = mongoose;
 
-const doctorSchema = new Schema({
+const doctorSchema:Schema<DocumentDoctor> = new Schema<DocumentDoctor>({
     first_name: {
         type: String,
         require: true
@@ -25,4 +25,5 @@ const doctorSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('userDoctors', doctorSchema)
+
+export const ModelDoctor:Model<DocumentDoctor> = model('Doctor', doctorSchema)
