@@ -16,7 +16,6 @@ export const addDoctors = (payload: PayloadDoctor) => {
     }
   }
 }
-
 export const addUser = (payload:User) => {
   return async (dispatch:Dispatch) => {
     try {
@@ -26,5 +25,25 @@ export const addUser = (payload:User) => {
     }catch (error) {
       await alertMessage(error.response.data.message, 'error')
     }
+  }
+}
+
+export const getAllDoctors = () => {
+  return async function(dispatch) {
+    const allDoctors:AxiosResponse = await axios.get('http://localhost:3005/doctor');
+    return dispatch({
+      type: 'GET_ALL_DOCTORS',
+      payload: allDoctors.data
+    })
+  }
+}
+
+export const getAllUsers = () => {
+  return async function(dispatch) {
+    const allUsers:AxiosResponse = await axios.get('http://localhost:3005/user');
+    return dispatch({
+      type: 'GET_ALL_USERS',
+      payload: allUsers.data
+    })
   }
 }

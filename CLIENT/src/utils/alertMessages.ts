@@ -6,6 +6,6 @@ export const alertMessage = async (message:string, icon):Promise<void> => {
         icon: icon,
         title: message,
         showConfirmButton: false,
-        timer: 1500
+        timer: 2500
     })
 }

@@ -24,7 +24,9 @@ export const useFormUser = (initialForm, validationForm) => {
 
     const addNewUser = (e:React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
+        console.log(errors)
         if (Object.values(errors).every((val) => val.trim() === '')){
+            console.log("hola")
             dispatch(addUser(form));
         }
     }
