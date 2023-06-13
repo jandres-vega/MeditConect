@@ -1,4 +1,5 @@
 import React from 'react'
+import Swal from 'sweetalert2'
 import { useDispatch } from 'react-redux';
 import {addDoctors} from "../redux/actions";
 interface form {
@@ -42,11 +43,9 @@ export const useFormDoctor = (initialForm: form, validation: (form: form) => for
       specialty: e.target.value
     })
   }
-  const addDoctor = (): void => {
+  const addDoctor = async(): Promise<void> => {
     if (Object.values(errors).every((val) => val.trim() === '')){
-      dispatch(addDoctors(form))
-    }else {
-      console.log("otro hola")
+      dispatch(addDoctors(form));
     }
   }
   return {

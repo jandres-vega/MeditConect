@@ -5,15 +5,15 @@ import {Doctor, DocumentDoctor} from "../types/type.doctor";
 const doctorSchema:Schema<DocumentDoctor> = new Schema<DocumentDoctor>({
     first_name: {
         type: String,
-        require: true
+        required: true
     },
     last_name: {
         type: String,
-        require: true
+        required: true
     },
     email: {
         type: String,
-        require: true
+        required: true
     },
     consultorio: {
         type: Number,
@@ -21,9 +21,8 @@ const doctorSchema:Schema<DocumentDoctor> = new Schema<DocumentDoctor>({
     },
     specialty: {
         type: String,
-        require: true
+        required: true
     }
 })
-
 
 export const ModelDoctor:Model<DocumentDoctor> = model('Doctor', doctorSchema)

@@ -1,21 +1,7 @@
-interface formDoctor {
-  firstName: string
-  lastName: string
-  email: string
-  consultorio: string
-  especialidad: string
-}
-
-interface errors {
-  firstName: string
-  lastName: string
-  email: string
-  consultorio: string
-  especialidad: string
-}
-
-export const validatoFormDoctor = (form: formDoctor): errors => {
-  const errores: errors = {
+import {ErrorsFormDoctor} from "../types/type.errors.ts";
+import {PayloadDoctor} from "../types/types.doctor.ts";
+export const validatoFormDoctor = (form: PayloadDoctor): ErrorsFormDoctor => {
+  const errores: ErrorsFormDoctor = {
     firstName: '',
     lastName: '',
     email: '',

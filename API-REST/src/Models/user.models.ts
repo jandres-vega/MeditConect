@@ -4,24 +4,24 @@ import {User, DocumenUser} from "../types/type.user";
 const userSchema:Schema<DocumenUser>= new Schema({
     first_name: {
         type: String,
-        require: true
+        required: true
     },
     identification: {
         type: String,
-        require: true
+        required: true
     },
     last_name: {
         type: String,
-        require: true
+        required: true
     },
     age: {
         type: Number,
-        require: true
+        required: true
     },
     cellphone: {
         type: String,
-        require: true
+        required: true
     }
 })
 
-export const ModelUser:Model<User> = model("Personas", userSchema)
+export const ModelUser:Model<DocumenUser> = model("Personas", userSchema)
