@@ -1,71 +1,49 @@
-- aplicativo web (REST API)  que por medio de formularios reciba la información de pacientes y doctores, los almacenen en una base de datos y luego con DOM los muestre en una página.
+# Scripts back-end
+## npm run dev
+Corre la aplicacion en modo desarrollo 
+en la url http://localhost:3005 abrirlo en el navegador.
+## npm start
+Ejecutar en modo produccion
+# Scripts front-end
+## npm run dev
+Corre la aplicacion en modo desarrollo
+en la url http://localhost:5173 abrirlo en el navegador.
+## npm start
+Ejecutar en modo produccion
+# env
+USER_DB = ""
 
-1. Formularios:
+NAME_DB = ""
 
-- Los formularios deben hacer uso de los diferentes tipos de entradas de datos en HTML.
+PASSWORD = ""
 
-- El formulario de doctores debe pedir los siguientes datos:
+PORT_SERVER = ""
+# Rutas para back-end
+### `POST`
+ new doctor:
 
-  a. Nombre
+    http://localhost:3005/doctor + body { first_name, last_name, email, consultorio, specialty }
 
-  b. Apellido
+ new patient:
 
-  c. Lista desplegable de la especialidad
+    http://localhost:3005/user + body { first_name, identification, last_name, age, cellphone }
+ new appointment:
 
-  d. Consultorio.
+    http://localhost:3005/appointment + body {"doctor": "648a4df7c822cf92b22fe967","user": "648a4e8ec822cf92b22fe977","identification_patient": "1023256","specialty": ["dermatologia"] }
+ 
+### `GET`
 
-  e. Correo de contacto.
+ all doctors:
 
-- El formulario de personas debe pedir los siguientes datos:
+    http://localhost:3005/doctor
+ all patient: 
 
-  a. Nombre.
+    http://localhost:3005/user
+ doctor by id:
+   
+    http://localhost:3005/doctor/id
+ appointments of doctor by id
 
-  b. Número de cédula.
+    http://localhost:3005/appointment/id //el id  es dec doctor
 
-  c. Apellido.
-
-  d. Edad.
-
-  e. Teléfono.
-
-* El formulario cita médica en donde se soliciten los siguientes datos
-
-  a. Número documento paciente.
-
-  b. Lista desplegable de la especialidad.
-
-# Al asignar una cita, esta se debe realizar con el doctor y el paciente.
-
-2. Utilice TypeScript para la validación de los formularios.
-
-3. Listas desplegables.
-
-# Se debe tener una lista desplegable para las Especialidades (doctor y paciente) con las siguientes especialidades.
-
-* Medicina general.
-
-* Cardiología.
-
-* Medicina interna.
-
-* Dermatología.
-
-* Rehabilitación física.
-
-* Psicología.
-
-* Odontología.
-
-* Radiología.
-
-4. La información capturada en los formularios se debe almacenar en una base de datos por medio de POST.
-
-5. Debe haber una página que muestre el listado de pacientes con su información personal, por medio de GET.
-
-6. Debe haber una página que muestra el listado de doctores  con su información, por medio de GET.
-
-7. Debe haber una página que muestra el listado de citas con su información, por medio de GET.
-
-8. Se debe utilizar Node JS, Express y TypeScript.
-
-9. Utilice como motor de base de datos, MySQL o MongoDB.
+![Captura de pantalla (2).png](..%2F..%2FPictures%2FScreenshots%2FCaptura%20de%20pantalla%20%282%29.png)![Captura de pantalla (3).png](..%2F..%2FPictures%2FScreenshots%2FCaptura%20de%20pantalla%20%283%29.png)![Captura de pantalla (4).png](..%2F..%2FPictures%2FScreenshots%2FCaptura%20de%20pantalla%20%284%29.png)

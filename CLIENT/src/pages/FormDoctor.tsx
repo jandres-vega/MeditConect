@@ -70,10 +70,6 @@ const FormDoctor = (): JSX.Element => {
                             ))
                         }
                     </select>
-                    {/*{*/}
-                    {/*    (errors.especialidad !== '') &&*/}
-                    {/*    <span id="error-nombre" className="text-danger"> {errors.especialidad} </span>*/}
-                    {/*}*/}
                 </div>
                 <button onClick={addDoctor} type="button" className="btn btn-primary btn-add">Ingresar datos</button>
             </form>
