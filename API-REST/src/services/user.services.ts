@@ -3,7 +3,6 @@ import {ModelUser} from "../Models/user.models";
 import {User} from "../types/type.user";
 
 class UserServices {
-
     async getAllUsers(){
         return ModelUser.find();
     }

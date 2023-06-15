@@ -1,7 +1,7 @@
-import {model, Model, Schema} from "mongoose";
-import {MedicaAppointment, DocumentMedicalAppointment} from "../types/type.medicalAppointment";
+import { model, Model, Schema } from "mongoose";
+import { DocumentMedicalAppointment } from "../types/type.medicalAppointment";
 
-const medicalAppointmentSchema:Schema<DocumentMedicalAppointment>= new Schema<MedicaAppointment>({
+const medicalAppointmentSchema: Schema<DocumentMedicalAppointment> = new Schema<DocumentMedicalAppointment>({
     doctor: {
         type: Schema.Types.ObjectId,
         ref: "Doctor"
@@ -18,7 +18,6 @@ const medicalAppointmentSchema:Schema<DocumentMedicalAppointment>= new Schema<Me
         type: [String],
         required: true
     },
+});
 
-})
-
-export const ModelAppointment:Model<MedicaAppointment> = model("medicalAppointment", medicalAppointmentSchema);
+export const ModelAppointment: Model<DocumentMedicalAppointment> = model<DocumentMedicalAppointment>("MedicalAppointment", medicalAppointmentSchema);
